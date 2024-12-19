@@ -9,8 +9,8 @@ pipeline {
     stage('Clean Workspace') {
         steps {
           deleteDir() // Deletes everything in the current workspace
-        }
       }
+    }
     stage('Checkout') {
       steps {
           sh '''
@@ -18,8 +18,8 @@ pipeline {
           export GIT_CURL_VERBOSE=1
           git clone --depth 1 --branch main https://github.com/Veeru-devop/Jenkins-Zero-To-Hero.git .
           '''
-        }
       }
+    }
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
