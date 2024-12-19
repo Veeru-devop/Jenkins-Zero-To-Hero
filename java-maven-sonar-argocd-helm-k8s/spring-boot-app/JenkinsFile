@@ -12,10 +12,14 @@ pipeline {
         }
       }
     stage('Checkout') {
-        steps {
-          sh 'git clone --depth 1 --branch main https://github.com/Veeru-devop/Jenkins-Zero-To-Hero.git .'
+      steps {
+          sh '''
+          export GIT_TRACE=1
+          export GIT_CURL_VERBOSE=1
+          git clone --depth 1 --branch main https://github.com/Veeru-devop/Jenkins-Zero-To-Hero.git .
+          '''
         }
-  }
+      }
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
