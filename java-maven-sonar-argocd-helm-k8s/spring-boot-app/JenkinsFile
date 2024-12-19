@@ -13,11 +13,8 @@ pipeline {
     }
     stage('Checkout') {
       steps {
-          sh '''
-          export GIT_TRACE=1
-          export GIT_CURL_VERBOSE=1
-          git clone --depth 1 --branch main https://github.com/Veeru-devop/Jenkins-Zero-To-Hero.git .
-          '''
+        sh 'echo passed'
+        //git branch: 'main', url: 'https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git'
       }
     }
     stage('Build and Test') {
